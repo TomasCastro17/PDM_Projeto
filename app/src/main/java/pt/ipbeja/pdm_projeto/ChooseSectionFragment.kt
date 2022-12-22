@@ -5,16 +5,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import pt.ipbeja.pdm_projeto.databinding.FragmentChooseSectionBinding
+import pt.ipbeja.pdm_projeto.databinding.FragmentCreateProfileBinding
 
 class ChooseSectionFragment : Fragment() {
 
+    private lateinit var binding: FragmentChooseSectionBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_choose_section, container, false)
+    ): View {
+        binding = FragmentChooseSectionBinding.inflate(inflater)
+        return binding.root
     }
 
 }
