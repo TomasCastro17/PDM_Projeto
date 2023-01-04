@@ -3,11 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/createProfileFragment">
+    app:startDestination="@id/mainMenuFragment">
+
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="pt.ipbeja.pdm_projeto.ui.menus.MainMenuFragment"
+        android:label="fragment_main_menu"
+        tools:layout="@layout/fragment_main_menu" >
+    <action
+        android:id="@+id/action_mainMenuFragment_to_createProfileFragment"
+        app:destination="@id/createProfileFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/createProfileFragment"
-        android:name="pt.ipbeja.pdm_projeto.CreateProfileFragment"
+        android:name="pt.ipbeja.pdm_projeto.ui.profile.CreateProfileFragment"
         android:label="fragment_create_profile"
         tools:layout="@layout/fragment_create_profile" >
         <action
@@ -16,7 +26,9 @@
     </fragment>
     <fragment
         android:id="@+id/cameraFragment"
-        android:name="pt.ipbeja.pdm_projeto.CameraFragment"
+        android:name="pt.ipbeja.pdm_projeto.ui.profile.CameraFragment"
         android:label="fragment_camera"
         tools:layout="@layout/fragment_camera" />
+
+
 </navigation>

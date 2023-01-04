@@ -1,4 +1,4 @@
-package pt.ipbeja.pdm_projeto
+package pt.ipbeja.pdm_projeto.ui.profile
 
 import androidx.lifecycle.ViewModel
 import java.io.File

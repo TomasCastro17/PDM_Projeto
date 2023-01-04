@@ -1,4 +1,4 @@
-package pt.ipbeja.pdm_projeto
+package pt.ipbeja.pdm_projeto.ui.menus
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
