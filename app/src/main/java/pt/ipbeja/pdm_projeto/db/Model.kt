@@ -12,12 +12,15 @@ data class Profile(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
 )
 
-/*
 @Entity(foreignKeys = [
     ForeignKey(
         entity = Profile::class,
         parentColumns = ["id"],
-        childColumns = ["contactId"],
+        childColumns = ["profileId"],
         onDelete = ForeignKey.CASCADE
     )
-])*/
+])
+data class Progress (
+    val profileId: Long,
+    @PrimaryKey(autoGenerate = true) val id: Long = 0
+)

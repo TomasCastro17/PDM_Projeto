@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.profile.ProfileProgressFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/profileProgression"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hello"
+            android:textAlignment="center"
+            android:textSize="@dimen/titles_size"
+            android:layout_margin="@dimen/main_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="@dimen/progress_area_width"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:text="Áreas"
+                android:layout_marginLeft="@dimen/main_margin"
+                android:layout_marginRight="@dimen/main_margin"
+                android:textSize="@dimen/progress_area_text_size"/>
+            <TextView
+                android:layout_width="@dimen/progress_track_width"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:text="Trilhos"
+                android:textSize="@dimen/progress_area_text_size"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:text="Feito"
+                android:layout_marginLeft="@dimen/main_margin"
+                android:layout_marginRight="@dimen/main_margin"
+                android:textSize="@dimen/progress_area_text_size"/>
+        </LinearLayout>
+        <!--
+            AFETIVO
+        -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/progress_area_width"
+                android:layout_height="@dimen/progress_track_height"
+                android:layout_margin="@dimen/progress_margin"
+                android:background="#FF0026"
+                android:gravity="center"
+                android:text="Afetivo"
+                android:textAlignment="center"
+                android:textSize="@dimen/progress_area_text_size"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/progress_margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="@dimen/progress_track_width"
+                    android:layout_height="@dimen/progress_track_height"
+                    android:background="#F45A5A"
+                    android:gravity="center"
+                    android:text="Relacionamento\ne sensibilidade"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/progress_text_size" />
+
+                <TextView
+                    android:layout_width="@dimen/progress_track_width"
+                    android:layout_height="@dimen/progress_track_height"
+                    android:layout_marginTop="@dimen/progress_margin_between"
+                    android:layout_marginBottom="@dimen/progress_margin_between"
+                    android:background="#F45A5A"
+                    android:gravity="center"
+                    android:text="Equilibrio\nemocional"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/progress_text_size"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/afetivoTrilhoRelacional" />
+
+                <TextView
+                    android:layout_width="@dimen/progress_track_width"
+                    android:layout_height="@dimen/progress_track_height"
+                    android:background="#F45A5A"
+                    android:gravity="center"
+                    android:text="Auto-estima"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/progress_text_size"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/afetivoTrilhoEmocional" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/progress_margin"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/progress_checkbox_afetivo_relacionamento"
+                    android:layout_width="@dimen/progress_track_height"
+                    android:layout_height="@dimen/progress_track_height" />
+
+                <CheckBox
+                    android:id="@+id/progress_checkbox_afetivo__eqEmocional"
+                    android:layout_width="@dimen/progress_track_height"
+                    android:layout_height="@dimen/progress_track_height"
+                    android:layout_marginTop="@dimen/progress_margin_between"
+                    android:layout_marginBottom="@dimen/progress_margin_between" />
+
+                <CheckBox
+                    android:id="@+id/progress_checkbox_afetivo__autoestima"
+                    android:layout_width="@dimen/progress_track_height"
+                    android:layout_height="@dimen/progress_track_height" />
+            </LinearLayout>
+        </LinearLayout>
+        <!--
+            FIM AFETIVO
+        -->
+
+        <!--
+            CARACTER
+        -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/progress_area_width"
+                android:layout_height="@dimen/progress_track_height"
+                android:layout_margin="@dimen/progress_margin"
+                android:background="#0E82FF"
+                android:gravity="center"
+                android:text="Carácter"
+                android:textAlignment="center"
+                android:textSize="@dimen/progress_area_text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profileProgression" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/progress_margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="@dimen/progress_track_width"
+                    android:layout_height="@dimen/progress_track_height"
+                    android:background="#4FA4FF"
+                    android:gravity="center"
+                    android:text="Autonomia"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/progress_text_size" />
+
+                <TextView
+                    android:layout_width="@dimen/progress_track_width"
+                    android:layout_height="@dimen/progress_track_height"
+                    android:layout_marginTop="@dimen/progress_margin_between"
+                    android:layout_marginBottom="@dimen/progress_margin_between"
+                    android:background="#4FA4FF"
+                    android:gravity="center"
+                    android:text="Responsabilidade"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/progress_text_size"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/afetivoTrilhoRelacional" />
+
+                <TextView
+                    android:layout_width="@dimen/progress_track_width"
+                    android:layout_height="@dimen/progress_track_height"
+                    android:background="#4FA4FF"
+                    android:gravity="center"
+                    android:text="Coerência"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/progress_text_size"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/afetivoTrilhoEmocional" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/progress_margin"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/progress_checkbox_caracter_autonomia"
+                    android:layout_width="@dimen/progress_track_height"
+                    android:layout_height="@dimen/progress_track_height" />
+
+                <CheckBox
+                    android:id="@+id/progress_checkbox_caracter_responsabilidade"
+                    android:layout_width="@dimen/progress_track_height"
+                    android:layout_height="@dimen/progress_track_height"
+                    android:layout_marginTop="@dimen/progress_margin_between"
+                    android:layout_marginBottom="@dimen/progress_margin_between" />
+
+                <CheckBox
+                    android:id="@+id/progress_checkbox_caracter_coerencia"
+                    android:layout_width="@dimen/progress_track_height"
+                    android:layout_height="@dimen/progress_track_height" />
+            </LinearLayout>
+        </LinearLayout>
+        <!--
+            FIM CARACTER
+        -->
+        <!--
+            ESPIRITUAL
+        -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileProgression">
+
+            <TextView
+                android:layout_width="@dimen/progress_area_width"
+                android:layout_height="@dimen/progress_track_height"
+                android:layout_margin="@dimen/progress_margin"
+                android:background="#FF0EFB"
+                android:gravity="center"
+                android:text="Espiritual"
+                android:textAlignment="center"
+                android:textSize="@dimen/progress_area_text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profileProgression" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/progress_margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="@dimen/progress_track_width"
+                    android:layout_height="@dimen/progress_track_height"
+                    android:background="#FF86FD"
+                    android:gravity="center"
+                    android:text="Descoberta"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/progress_text_size" />
+
+                <TextView
+                    android:layout_width="@dimen/progress_track_width"
+                    android:layout_height="@dimen/progress_track_height"
+                    android:layout_marginTop="@dimen/progress_margin_between"
+                    android:layout_marginBottom="@dimen/progress_margin_between"
+                    android:background="#FF86FD"
+                    android:gravity="center"
+                    android:text="Aprofundamento"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/progress_text_size"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/afetivoTrilhoRelacional" />
+
+                <TextView
+                    android:layout_width="@dimen/progress_track_width"
+                    android:layout_height="@dimen/progress_track_height"
+                    android:background="#FF86FD"
+                    android:gravity="center"
+                    android:text="Serviço"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/progress_text_size"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/afetivoTrilhoEmocional" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/progress_margin"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/progress_checkbox_espiritual_descoberta"
+                    android:layout_width="@dimen/progress_track_height"
+                    android:layout_height="@dimen/progress_track_height" />
+
+                <CheckBox
+                    android:id="@+id/progress_checkbox_espiritual_aprofundamento"
+                    android:layout_width="@dimen/progress_track_height"
+                    android:layout_height="@dimen/progress_track_height"
+                    android:layout_marginTop="@dimen/progress_margin_between"
+                    android:layout_marginBottom="@dimen/progress_margin_between" />
+
+                <CheckBox
+                    android:id="@+id/progress_checkbox_espiritual_servico"
+                    android:layout_width="@dimen/progress_track_height"
+                    android:layout_height="@dimen/progress_track_height" />
+            </LinearLayout>
+        </LinearLayout>
+        <!--
+            FIM ESPIRITUAL
+        -->
+        <!--
+            FISICO
+        -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileProgression">
+
+            <TextView
+                android:layout_width="@dimen/progress_area_width"
+                android:layout_height="@dimen/progress_track_height"
+                android:layout_margin="@dimen/progress_margin"
+                android:background="#01CA33"
+                android:gravity="center"
+                android:text="Fisico"
+                android:textAlignment="center"
+                android:textSize="@dimen/progress_area_text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profileProgression" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/progress_margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="@dimen/progress_track_width"
+                    android:layout_height="@dimen/progress_track_height"
+                    android:background="#52E877"
+                    android:gravity="center"
+                    android:text="Desempenho"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/progress_text_size" />
+
+                <TextView
+                    android:layout_width="@dimen/progress_track_width"
+                    android:layout_height="@dimen/progress_track_height"
+                    android:layout_marginTop="@dimen/progress_margin_between"
+                    android:layout_marginBottom="@dimen/progress_margin_between"
+                    android:background="#52E877"
+                    android:gravity="center"
+                    android:text="Auto-conhecimento"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/progress_text_size"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/afetivoTrilhoRelacional" />
+
+                <TextView
+                    android:layout_width="@dimen/progress_track_width"
+                    android:layout_height="@dimen/progress_track_height"
+                    android:background="#52E877"
+                    android:gravity="center"
+                    android:text="Bem-estar físico"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/progress_text_size"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/afetivoTrilhoEmocional" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/progress_margin"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/progress_checkbox_fisico_desempenho"
+                    android:layout_width="@dimen/progress_track_height"
+                    android:layout_height="@dimen/progress_track_height" />
+
+                <CheckBox
+                    android:id="@+id/progress_checkbox_fisicol_autoconhecimento"
+                    android:layout_width="@dimen/progress_track_height"
+                    android:layout_height="@dimen/progress_track_height"
+                    android:layout_marginTop="@dimen/progress_margin_between"
+                    android:layout_marginBottom="@dimen/progress_margin_between" />
+
+                <CheckBox
+                    android:id="@+id/progress_checkbox_fisico_bemestarFisico"
+                    android:layout_width="@dimen/progress_track_height"
+                    android:layout_height="@dimen/progress_track_height" />
+            </LinearLayout>
+        </LinearLayout>
+        <!--
+            FIM FISICO
+        -->
+        <!--
+            INTELECTUAL
+        -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileProgression">
+
+            <TextView
+                android:layout_width="@dimen/progress_area_width"
+                android:layout_height="@dimen/progress_track_height"
+                android:layout_margin="@dimen/progress_margin"
+                android:background="#FF760E"
+                android:gravity="center"
+                android:text="Intelectual"
+                android:textAlignment="center"
+                android:textSize="@dimen/progress_area_text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profileProgression" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/progress_margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="@dimen/progress_track_width"
+                    android:layout_height="@dimen/progress_track_height"
+                    android:background="#FFA058"
+                    android:gravity="center"
+                    android:text="Procura do\nconhecimento"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/progress_text_size" />
+
+                <TextView
+                    android:layout_width="@dimen/progress_track_width"
+                    android:layout_height="@dimen/progress_track_height"
+                    android:layout_marginTop="@dimen/progress_margin_between"
+                    android:layout_marginBottom="@dimen/progress_margin_between"
+                    android:background="#FFA058"
+                    android:gravity="center"
+                    android:text="Resolução de\nproblemas"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/progress_text_size"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/afetivoTrilhoRelacional" />
+
+                <TextView
+                    android:layout_width="@dimen/progress_track_width"
+                    android:layout_height="@dimen/progress_track_height"
+                    android:background="#FFA058"
+                    android:gravity="center"
+                    android:text="Criatividade e\nExpressão"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/progress_text_size"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/afetivoTrilhoEmocional" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/progress_margin"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/progress_checkbox_intelectual_conhecimento"
+                    android:layout_width="@dimen/progress_track_height"
+                    android:layout_height="@dimen/progress_track_height" />
+
+                <CheckBox
+                    android:id="@+id/progress_checkbox_intelectual_resProblemas"
+                    android:layout_width="@dimen/progress_track_height"
+                    android:layout_height="@dimen/progress_track_height"
+                    android:layout_marginTop="@dimen/progress_margin_between"
+                    android:layout_marginBottom="@dimen/progress_margin_between" />
+
+                <CheckBox
+                    android:id="@+id/progress_checkbox_intelectual_criatividade"
+                    android:layout_width="@dimen/progress_track_height"
+                    android:layout_height="@dimen/progress_track_height" />
+            </LinearLayout>
+        </LinearLayout>
+        <!--
+            FIM INTELECTUAL
+        -->
+        <!--
+            SOCIAL
+        -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileProgression">
+
+            <TextView
+                android:layout_width="@dimen/progress_area_width"
+                android:layout_height="@dimen/progress_track_height"
+                android:layout_margin="@dimen/progress_margin"
+                android:background="#8F0EFF"
+                android:gravity="center"
+                android:text="Social"
+                android:textAlignment="center"
+                android:textSize="@dimen/progress_area_text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profileProgression" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/progress_margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="@dimen/progress_track_width"
+                    android:layout_height="@dimen/progress_track_height"
+                    android:background="#C785FF"
+                    android:gravity="center"
+                    android:text="Exercer ativamente\ncidadania"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/progress_text_size" />
+
+                <TextView
+                    android:layout_width="@dimen/progress_track_width"
+                    android:layout_height="@dimen/progress_track_height"
+                    android:layout_marginTop="@dimen/progress_margin_between"
+                    android:layout_marginBottom="@dimen/progress_margin_between"
+                    android:background="#C785FF"
+                    android:gravity="center"
+                    android:text="Solidariedade e\ntolerância"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/progress_text_size" />
+
+                <TextView
+                    android:layout_width="@dimen/progress_track_width"
+                    android:layout_height="@dimen/progress_track_height"
+                    android:background="#C785FF"
+                    android:gravity="center"
+                    android:text="Interação e cooperação"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/progress_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/progress_margin"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/progress_checkbox_espiritual_cidadania"
+                    android:layout_width="@dimen/progress_track_height"
+                    android:layout_height="@dimen/progress_track_height" />
+
+                <CheckBox
+                    android:id="@+id/progress_checkbox_espiritual_solidariedade"
+                    android:layout_width="@dimen/progress_track_height"
+                    android:layout_height="@dimen/progress_track_height"
+                    android:layout_marginTop="@dimen/progress_margin_between"
+                    android:layout_marginBottom="@dimen/progress_margin_between" />
+
+                <CheckBox
+                    android:id="@+id/progress_checkbox_espiritual_interacao"
+                    android:layout_width="@dimen/progress_track_height"
+                    android:layout_height="@dimen/progress_track_height" />
+            </LinearLayout>
+        </LinearLayout>
+        <!--
+            FIM SOCIAL
+        -->
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/btnConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="@dimen/main_margin"
+            android:text="Guardar"/>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_margin="@dimen/main_margin"
+            android:text="Cancelar"/>
+        </FrameLayout>
+
+    </LinearLayout>
+
+</ScrollView>

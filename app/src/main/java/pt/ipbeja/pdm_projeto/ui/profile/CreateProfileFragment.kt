@@ -11,11 +11,12 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import pt.ipbeja.pdm_projeto.databinding.FragmentCreateProfileBinding
 import pt.ipbeja.pdm_projeto.db.Profile
-import pt.ipbeja.pdm_projeto.db.ScoutsDB
+import pt.ipbeja.pdm_projeto.ui.ProfileViewModel
 
 class CreateProfileFragment : Fragment() {
 
-    private val viewModel: PhotoViewModel by activityViewModels()
+    private val photoViewModel: PhotoViewModel by activityViewModels()
+    private val profileViewModel: ProfileViewModel by activityViewModels()
     private lateinit var binding: FragmentCreateProfileBinding
 
     override fun onCreateView(
@@ -38,30 +39,32 @@ class CreateProfileFragment : Fragment() {
         }
 
         binding.profileCreate.setOnClickListener {
-            //TODO : SAVE IN DATABASE, AND CHANGE SCREEN
             if (profilePicturePath == "") {
                 Snackbar.make(view, "Precisas de tirar uma fotografia!", Snackbar.LENGTH_LONG).show()
-            } else {
+
+            } else if (binding.profileName.text.toString() != ""){
                 val profileName = binding.profileName.text.toString()
                 val profileSection = binding.profileSection.selectedItem.toString()
                 val profile = Profile(profileName, profileSection, profilePicturePath)
-                ScoutsDB(requireContext())
+                /*ScoutsDB(requireContext())
                     .profileDao()
-                    .add(profile)
-
+                    .add(profile)*/
+                profileViewModel.addProfile(profile)
                 Snackbar.make(view, "Perfil do $profileName criado!!", Snackbar.LENGTH_SHORT).show()
                 findNavController().popBackStack()
-
+                photoViewModel.photoTaken = false
             }
         }
     }
 
     private fun setPicture(): String {
-        viewModel.file?.let {
-            binding.profilePhoto.setImageURI(it.toUri())
-            return it.toUri().toString()
-//            Toast.makeText(this.context, it.toUri().toString(), Toast.LENGTH_LONG).show()
+        photoViewModel.file?.let {
+            if (photoViewModel.photoTaken) {
+                binding.profilePhoto.setImageURI(it.toUri())
+                return it.toUri().toString()
+            }
         }
         return ""
     }
+
 }

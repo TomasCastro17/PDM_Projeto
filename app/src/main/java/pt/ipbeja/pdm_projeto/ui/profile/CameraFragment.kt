@@ -41,6 +41,7 @@ class CameraFragment : Fragment() {
                 result.toFile(file) {
                     it?.run {
                         viewModel.file = it
+                        viewModel.photoTaken = true
                         findNavController().popBackStack()
                     }
                 }

@@ -1,14 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.menus.ChooseSectionFragment">
+    android:layout_margin="32dp"
+    tools:context=".ui.menus.MainMenuFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/optionLobitos"
+        android:layout_width="300dp"
+        android:layout_height="@dimen/menu_btn_height"
+        android:text="Lobitos"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/optionExploradores"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/optionExploradores"
+        android:layout_width="300dp"
+        android:layout_height="@dimen/menu_btn_height"
+        android:text="Exploradores"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/optionPioneiros"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/optionLobitos" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/optionPioneiros"
+        android:layout_width="300dp"
+        android:layout_height="@dimen/menu_btn_height"
+        android:text="Pioneiros"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/optionCaminheiros"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/optionExploradores" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/optionCaminheiros"
+        android:layout_width="300dp"
+        android:layout_height="@dimen/menu_btn_height"
+        android:text="Caminheiros"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/optionPioneiros" />
+<!--
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Escolher Secção  para ver os perfis" />
+
+        <Spinner
+            android:id="@+id/profileSection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:entries="@array/seccao"
+            android:minHeight="48dp" />
+
+    </LinearLayout>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

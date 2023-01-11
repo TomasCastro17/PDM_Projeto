@@ -27,7 +27,10 @@ class MainMenuFragment : Fragment() {
             findNavController().navigate(MainMenuFragmentDirections.actionMainMenuFragmentToCreateProfileFragment())
         }
 
-//        binding.imageView.setImageURI("file:///data/user/0/pt.ipbeja.pdm_projeto/files/pic.jpg".toUri())
+        binding.optionViewProfiles.setOnClickListener {
+            findNavController().navigate(MainMenuFragmentDirections.actionMainMenuFragmentToChooseSectionFragment())
+        }
+
     }
 
 }

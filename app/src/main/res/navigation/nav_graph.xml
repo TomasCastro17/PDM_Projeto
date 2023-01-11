@@ -13,6 +13,9 @@
     <action
         android:id="@+id/action_mainMenuFragment_to_createProfileFragment"
         app:destination="@id/createProfileFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_chooseSectionFragment"
+            app:destination="@id/chooseSectionFragment" />
     </fragment>
 
     <fragment
@@ -29,6 +32,36 @@
         android:name="pt.ipbeja.pdm_projeto.ui.profile.CameraFragment"
         android:label="fragment_camera"
         tools:layout="@layout/fragment_camera" />
+    <fragment
+        android:id="@+id/chooseSectionFragment"
+        android:name="pt.ipbeja.pdm_projeto.ui.menus.ChooseSectionFragment"
+        android:label="fragment_choose_section"
+        tools:layout="@layout/fragment_choose_section" >
+        <action
+            android:id="@+id/action_chooseSectionFragment_to_profileListFragment"
+            app:destination="@id/profileListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileListFragment"
+        android:name="pt.ipbeja.pdm_projeto.ui.profile.ProfileListFragment"
+        android:label="fragment_profile_list"
+        tools:layout="@layout/fragment_profile_list" >
+        <argument
+            android:name="section"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_profileListFragment_to_profileProgressFragment"
+            app:destination="@id/profileProgressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileProgressFragment"
+        android:name="pt.ipbeja.pdm_projeto.ui.profile.ProfileProgressFragment"
+        android:label="fragment_profile_progress"
+        tools:layout="@layout/fragment_profile_progress" >
+        <argument
+            android:name="profileID"
+            app:argType="long" />
+    </fragment>
 
 
 </navigation>

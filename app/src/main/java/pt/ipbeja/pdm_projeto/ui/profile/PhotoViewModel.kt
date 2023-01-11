@@ -5,4 +5,5 @@ import java.io.File
 
 class PhotoViewModel: ViewModel() {
     var file: File? = null
+    var photoTaken = false
 }
