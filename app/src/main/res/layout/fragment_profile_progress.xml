@@ -13,7 +13,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/profileProgression"
+            android:id="@+id/profileProgressName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Hello"
@@ -581,19 +581,19 @@
                 android:orientation="vertical">
 
                 <CheckBox
-                    android:id="@+id/progress_checkbox_espiritual_cidadania"
+                    android:id="@+id/progress_checkbox_social_cidadania"
                     android:layout_width="@dimen/progress_track_height"
                     android:layout_height="@dimen/progress_track_height" />
 
                 <CheckBox
-                    android:id="@+id/progress_checkbox_espiritual_solidariedade"
+                    android:id="@+id/progress_checkbox_social_solidariedade"
                     android:layout_width="@dimen/progress_track_height"
                     android:layout_height="@dimen/progress_track_height"
                     android:layout_marginTop="@dimen/progress_margin_between"
                     android:layout_marginBottom="@dimen/progress_margin_between" />
 
                 <CheckBox
-                    android:id="@+id/progress_checkbox_espiritual_interacao"
+                    android:id="@+id/progress_checkbox_social_interacao"
                     android:layout_width="@dimen/progress_track_height"
                     android:layout_height="@dimen/progress_track_height" />
             </LinearLayout>

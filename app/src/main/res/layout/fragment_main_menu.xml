@@ -25,17 +25,17 @@
         android:layout_height="@dimen/menu_btn_height"
         android:text="Ver Escuteiros"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/optionPioneiros"
+        app:layout_constraintBottom_toTopOf="@+id/optionViewProgressDone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/optionCreateProfile" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/optionPioneiros"
+        android:id="@+id/optionViewProgressDone"
         android:layout_width="300dp"
         android:layout_height="@dimen/menu_btn_height"
-        android:text=""
+        android:text="Escuteiros Com Mérito"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/optionCaminheiros"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,6 +53,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/optionPioneiros" />
+        app:layout_constraintTop_toBottomOf="@+id/optionViewProgressDone"
+        android:layout_marginBottom="@dimen/main_margin"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

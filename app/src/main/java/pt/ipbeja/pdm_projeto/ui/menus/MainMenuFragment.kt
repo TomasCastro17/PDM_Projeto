@@ -1,11 +1,11 @@
 package pt.ipbeja.pdm_projeto.ui.menus
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import kotlinx.coroutines.launch
 import pt.ipbeja.pdm_projeto.databinding.FragmentMainMenuBinding
 
 class MainMenuFragment : Fragment() {
@@ -24,13 +24,34 @@ class MainMenuFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.optionCreateProfile.setOnClickListener {
-            findNavController().navigate(MainMenuFragmentDirections.actionMainMenuFragmentToCreateProfileFragment())
+            lifecycleScope.launch {
+                findNavController().navigate(
+                    MainMenuFragmentDirections.actionMainMenuFragmentToCreateProfileFragment(
+                        -1
+                    )
+                )
+            }
         }
 
         binding.optionViewProfiles.setOnClickListener {
-            findNavController().navigate(MainMenuFragmentDirections.actionMainMenuFragmentToChooseSectionFragment())
+            lifecycleScope.launch {
+                findNavController().navigate(
+                    MainMenuFragmentDirections.actionMainMenuFragmentToChooseSectionFragment(
+                        false
+                    )
+                )
+            }
+        }
+
+        binding.optionViewProgressDone.setOnClickListener {
+            lifecycleScope.launch {
+                findNavController().navigate(
+                    MainMenuFragmentDirections.actionMainMenuFragmentToChooseSectionFragment(
+                        true
+                    )
+                )
+            }
         }
 
     }
-
 }

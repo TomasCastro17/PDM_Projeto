@@ -26,6 +26,14 @@
         <action
             android:id="@+id/action_createProfileFragment_to_cameraFragment"
             app:destination="@id/cameraFragment" />
+        <action
+            android:id="@+id/action_createProfileFragment_to_profileListFragment"
+            app:destination="@id/profileListFragment" />
+        <argument android:name="profileID"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_createProfileFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
     </fragment>
     <fragment
         android:id="@+id/cameraFragment"
@@ -40,6 +48,12 @@
         <action
             android:id="@+id/action_chooseSectionFragment_to_profileListFragment"
             app:destination="@id/profileListFragment" />
+        <action
+            android:id="@+id/action_chooseSectionFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
+        <argument
+            android:name="progressDone"
+            app:argType="boolean" />
     </fragment>
     <fragment
         android:id="@+id/profileListFragment"
@@ -52,6 +66,18 @@
         <action
             android:id="@+id/action_profileListFragment_to_profileProgressFragment"
             app:destination="@id/profileProgressFragment" />
+        <action
+            android:id="@+id/action_profileListFragment_to_chooseSectionFragment"
+            app:destination="@id/chooseSectionFragment" />
+        <action
+            android:id="@+id/action_profileListFragment_to_createProfileFragment"
+            app:destination="@id/createProfileFragment" />
+        <action
+            android:id="@+id/action_profileListFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
+        <argument
+            android:name="progressDone"
+            app:argType="boolean" />
     </fragment>
     <fragment
         android:id="@+id/profileProgressFragment"
@@ -61,6 +87,9 @@
         <argument
             android:name="profileID"
             app:argType="long" />
+        <action
+            android:id="@+id/action_profileProgressFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
     </fragment>
 
 

@@ -52,7 +52,10 @@ class CameraFragment : Fragment() {
             binding.camera.takePicture()
         }
 
-
+        binding.cancelBtn.setOnClickListener {
+            findNavController().popBackStack()
+            binding.camera.close()
+        }
     }
     override fun onDestroyView() {
         super.onDestroyView()
