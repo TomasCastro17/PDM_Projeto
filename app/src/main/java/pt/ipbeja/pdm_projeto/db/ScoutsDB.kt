@@ -8,15 +8,18 @@ import androidx.room.RoomDatabase
 
 @Database(
     entities = [Profile::class, Progress::class, ProfileProgress::class],
-    version = 7,
+    version = 8,
     exportSchema = false
 )
 abstract class ScoutsDB : RoomDatabase() {
 
     abstract fun profileDao(): ProfileDao
-    abstract fun profileProgressDao(): ProfileProgressDao
     abstract fun progressDao(): ProgressDao
+    abstract fun profileProgressDao(): ProfileProgressDao
 
+    /**
+     * Initialization of the database
+     * */
     companion object {
         @Volatile
         private var instance: ScoutsDB? = null

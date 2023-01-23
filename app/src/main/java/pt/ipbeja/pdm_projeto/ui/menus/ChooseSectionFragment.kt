@@ -18,6 +18,14 @@ import pt.ipbeja.pdm_projeto.ui.profile.CreateProfileFragmentDirections
 import pt.ipbeja.pdm_projeto.ui.profile.ProfileListFragmentArgs
 import pt.ipbeja.pdm_projeto.viewmodel.ProfileViewModel
 
+/*
+* Since there are four different sections in the Scouts, the user has to choose
+* the section to access the profiles that belong to the selected section
+*
+* ------------------------------------
+* @authors: Tomás Jorge, Luiz Felhberg
+* @numbers: 20436, 20347
+*/
 class ChooseSectionFragment : Fragment() {
 
     private lateinit var binding: FragmentChooseSectionBinding
@@ -31,13 +39,22 @@ class ChooseSectionFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     * This method is a make sure that view is fully created and since this is an options menu
+     * its purpose is just to have listeners for the buttons so that when they are clicked
+     * the application changes the view fragment
+     *
+     * @param view – The View returned by onCreateView(LayoutInflater, ViewGroup, Bundle).
+     * @param savedInstanceState – If non-null, this fragment is being re-constructed from a
+     * previous saved state as given here.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // Generate the app menu on top right
         generateMenu()
 
-        /*if (args.progressDone) goToProfilesWithProgressDoneBySection()
-        else goToAllProfilesBySection()*/
-
+        // Click listener on the button "optionLobitos", to change to the ProfileListFragment
         binding.optionLobitos.setOnClickListener {
             findNavController().navigate(
                 ChooseSectionFragmentDirections.actionChooseSectionFragmentToProfileListFragment(
@@ -46,6 +63,7 @@ class ChooseSectionFragment : Fragment() {
             )
         }
 
+        // Click listener on the button "optionExploradores", to change to the ProfileListFragment
         binding.optionExploradores.setOnClickListener {
             findNavController().navigate(
                 ChooseSectionFragmentDirections.actionChooseSectionFragmentToProfileListFragment(
@@ -54,6 +72,7 @@ class ChooseSectionFragment : Fragment() {
             )
         }
 
+        // Click listener on the button "optionPioneiros", to change to the ProfileListFragment
         binding.optionPioneiros.setOnClickListener {
             findNavController().navigate(
                 ChooseSectionFragmentDirections.actionChooseSectionFragmentToProfileListFragment(
@@ -63,6 +82,7 @@ class ChooseSectionFragment : Fragment() {
 
         }
 
+        // Click listener on the button "optionCaminheiros", to change to the ProfileListFragment
         binding.optionCaminheiros.setOnClickListener {
             findNavController().navigate(
                 ChooseSectionFragmentDirections.actionChooseSectionFragmentToProfileListFragment(
@@ -71,50 +91,15 @@ class ChooseSectionFragment : Fragment() {
             )
         }
 
+        // Click listener on the button "chooseSectionBack", to change to the MainMenuFragment
         binding.chooseSectionBack.setOnClickListener {
             findNavController().navigate(ChooseSectionFragmentDirections.actionChooseSectionFragmentToMainMenuFragment())
         }
     }
 
-    /*private fun goToAllProfilesBySection() {
-
-    }
-
-    private fun goToProfilesWithProgressDoneBySection() {
-        binding.optionLobitos.setOnClickListener {
-            findNavController().navigate(
-                ChooseSectionFragmentDirections.actionChooseSectionFragmentToProgressDoneListFragment(
-                    1
-                )
-            )
-        }
-
-        binding.optionExploradores.setOnClickListener {
-            findNavController().navigate(
-                ChooseSectionFragmentDirections.actionChooseSectionFragmentToProgressDoneListFragment(
-                    2
-                )
-            )
-        }
-
-        binding.optionPioneiros.setOnClickListener {
-            findNavController().navigate(
-                ChooseSectionFragmentDirections.actionChooseSectionFragmentToProgressDoneListFragment(
-                    3
-                )
-            )
-
-        }
-
-        binding.optionCaminheiros.setOnClickListener {
-            findNavController().navigate(
-                ChooseSectionFragmentDirections.actionChooseSectionFragmentToProgressDoneListFragment(
-                    4
-                )
-            )
-        }
-    }*/
-
+    /**
+     * Method that creates an option in the app menu to go to the main menu
+     */
     private fun generateMenu() {
         val menuHost = requireActivity()
         menuHost.addMenuProvider(object : MenuProvider {

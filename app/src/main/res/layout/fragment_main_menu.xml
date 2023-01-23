@@ -11,7 +11,7 @@
         android:id="@+id/optionCreateProfile"
         android:layout_width="300dp"
         android:layout_height="@dimen/menu_btn_height"
-        android:text="Registar Escuteiro"
+        android:text="@string/register_scouts"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/optionViewProfiles"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +23,7 @@
         android:id="@+id/optionViewProfiles"
         android:layout_width="300dp"
         android:layout_height="@dimen/menu_btn_height"
-        android:text="Ver Escuteiros"
+        android:text="@string/see_scouts"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/optionViewProgressDone"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,25 +35,12 @@
         android:id="@+id/optionViewProgressDone"
         android:layout_width="300dp"
         android:layout_height="@dimen/menu_btn_height"
-        android:text="Escuteiros Com Mérito"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/optionCaminheiros"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/optionViewProfiles" />
-
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/optionCaminheiros"
-        android:layout_width="300dp"
-        android:layout_height="@dimen/menu_btn_height"
-        android:text=""
+        android:text="@string/scouts_with_merit"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/optionViewProgressDone"
-        android:layout_marginBottom="@dimen/main_margin"/>
+        app:layout_constraintTop_toBottomOf="@+id/optionViewProfiles" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

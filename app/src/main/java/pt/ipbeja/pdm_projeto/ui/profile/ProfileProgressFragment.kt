@@ -18,6 +18,13 @@ import pt.ipbeja.pdm_projeto.viewmodel.ProfileProgressViewModel
 import pt.ipbeja.pdm_projeto.viewmodel.ProfileViewModel
 import pt.ipbeja.pdm_projeto.viewmodel.ProgressViewModel
 
+/*
+* This fragment shows the progress of the selected profile
+*
+* ------------------------------------
+* @authors: Tomás Jorge, Luiz Felhberg
+* @numbers: 20436, 20347
+*/
 class ProfileProgressFragment : Fragment() {
 
     private lateinit var binding: FragmentProfileProgressBinding
@@ -36,81 +43,83 @@ class ProfileProgressFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     * This method is a make sure that view is fully created and its purpose is show the progress
+     * of the selected profile, with the information of his own progress
+     *
+     * @param view – The View returned by onCreateView(LayoutInflater, ViewGroup, Bundle).
+     * @param savedInstanceState – If non-null, this fragment is being re-constructed from a
+     * previous saved state as given here.
+     * */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         generateMenu()
 
         setTextViewToProfileName()
         fillCheckboxes()
+        // Listener to cancel the user changed and pop the users back to the list of the profiles
         binding.btnCancel.setOnClickListener {
             findNavController().popBackStack()
         }
 
+        // Listener to update the progress of profile depending on the value of the checkboxes
         binding.btnConfirm.setOnClickListener {
             lifecycleScope.launch {
                 progressViewModel.updateProgress(getCheckboxChecks())
                 setProfileProgressStage()
                 setProfileProgress()
             }
-            Snackbar.make(view, "Progresso guardado com sucesso!!", Snackbar.LENGTH_SHORT).show()
+            Snackbar.make(view, getString(R.string.snackbar_progress_save), Snackbar.LENGTH_SHORT)
+                .show()
             findNavController().popBackStack()
         }
     }
 
+    /**
+     * This method changes the TextView to the name of the selected profile
+     * */
     private fun setTextViewToProfileName() {
         val name = profileViewModel.getProfileNameById(args.profileID)
         binding.profileProgressName.text = name
     }
 
+    /**
+     * This method fill the checkboxes depending on the progress of the selected progress
+     * */
     private fun fillCheckboxes() {
         lifecycleScope.launch {
-            val progressList = progressViewModel.getAllFromProfileId(args.profileID).toString()
-            val attributes = progressList.split("(")[1].split(")")[0].split(",")
+            val progressList = progressViewModel.getAllFromProfileId(args.profileID)
+            binding.progressCheckboxAfetivoRelacionamento.isChecked = progressList.relacionamento
+            binding.progressCheckboxAfetivoEqEmocional.isChecked = progressList.eqEmocional
+            binding.progressCheckboxAfetivoAutoestima.isChecked = progressList.autoestima
 
-            binding.progressCheckboxAfetivoRelacionamento.isChecked =
-                attributes[0].split("=")[1].toBoolean()
-            binding.progressCheckboxAfetivoEqEmocional.isChecked =
-                attributes[1].split("=")[1].toBoolean()
-            binding.progressCheckboxAfetivoAutoestima.isChecked =
-                attributes[2].split("=")[1].toBoolean()
+            binding.progressCheckboxCaracterAutonomia.isChecked = progressList.autonomia
+            binding.progressCheckboxCaracterResponsabilidade.isChecked = progressList.responsabilidade
+            binding.progressCheckboxCaracterCoerencia.isChecked = progressList.coerencia
 
-            binding.progressCheckboxCaracterAutonomia.isChecked =
-                attributes[3].split("=")[1].toBoolean()
-            binding.progressCheckboxCaracterResponsabilidade.isChecked =
-                attributes[4].split("=")[1].toBoolean()
-            binding.progressCheckboxCaracterCoerencia.isChecked =
-                attributes[5].split("=")[1].toBoolean()
+            binding.progressCheckboxEspiritualDescoberta.isChecked = progressList.descoberta
+            binding.progressCheckboxEspiritualAprofundamento.isChecked = progressList.aprofundamento
+            binding.progressCheckboxEspiritualServico.isChecked = progressList.servico
 
-            binding.progressCheckboxEspiritualDescoberta.isChecked =
-                attributes[6].split("=")[1].toBoolean()
-            binding.progressCheckboxEspiritualAprofundamento.isChecked =
-                attributes[7].split("=")[1].toBoolean()
-            binding.progressCheckboxEspiritualServico.isChecked =
-                attributes[8].split("=")[1].toBoolean()
+            binding.progressCheckboxFisicolAutoconhecimento.isChecked = progressList.autoconhecimento
+            binding.progressCheckboxFisicoBemestarFisico.isChecked = progressList.bemestarFisico
+            binding.progressCheckboxFisicoDesempenho.isChecked = progressList.desempenho
 
-            binding.progressCheckboxFisicoDesempenho.isChecked =
-                attributes[9].split("=")[1].toBoolean()
-            binding.progressCheckboxFisicolAutoconhecimento.isChecked =
-                attributes[10].split("=")[1].toBoolean()
-            binding.progressCheckboxFisicoBemestarFisico.isChecked =
-                attributes[11].split("=")[1].toBoolean()
+            binding.progressCheckboxIntelectualConhecimento.isChecked = progressList.procuraConhecimento
+            binding.progressCheckboxIntelectualResProblemas.isChecked = progressList.resolucaoProblemas
+            binding.progressCheckboxIntelectualCriatividade.isChecked = progressList.criatividade
 
-            binding.progressCheckboxIntelectualConhecimento.isChecked =
-                attributes[12].split("=")[1].toBoolean()
-            binding.progressCheckboxIntelectualResProblemas.isChecked =
-                attributes[13].split("=")[1].toBoolean()
-            binding.progressCheckboxIntelectualCriatividade.isChecked =
-                attributes[14].split("=")[1].toBoolean()
-
-            binding.progressCheckboxSocialCidadania.isChecked =
-                attributes[15].split("=")[1].toBoolean()
-            binding.progressCheckboxSocialSolidariedade.isChecked =
-                attributes[16].split("=")[1].toBoolean()
-            binding.progressCheckboxSocialInteracao.isChecked =
-                attributes[17].split("=")[1].toBoolean()
+            binding.progressCheckboxSocialCidadania.isChecked = progressList.exercerCidadania
+            binding.progressCheckboxSocialSolidariedade.isChecked = progressList.solidariedade
+            binding.progressCheckboxSocialInteracao.isChecked = progressList.interecao
         }
     }
 
+    /**
+     * Method used to get an object of [Progress] to update the progress of the profile
+     *
+     * @return  [Progress] with the respective value of the checkboxes
+     * */
     private fun getCheckboxChecks(): Progress {
         val progressId = progressViewModel.getProgressIdFromProfileId(args.profileID)
         return Progress(
@@ -136,6 +145,9 @@ class ProfileProgressFragment : Fragment() {
         )
     }
 
+    /**
+     * Method that changes the stage of the profile according to the tracks it has made
+     * */
     private fun setProfileProgressStage() {
         val progressId = progressViewModel.getProgressIdFromProfileId(args.profileID)
         if (countTrueAffective() >= 1 && countTrueCharacter() >= 1 && countTrueSpiritual() >= 1 &&
@@ -163,58 +175,141 @@ class ProfileProgressFragment : Fragment() {
         }
     }
 
+    /**
+     * Method that changes the progress of the profile according to its section and tracks
+     * */
     private fun setProfileProgress() {
         val profileSection = profileViewModel.getProfileSection(args.profileID)
-        println(profileSection)
-        println(profileSection)
-        println(profileSection)
-        println(profileSection)
-        if(profileSection == "Lobitos") lobitosProgress()
-        if(profileSection == "Exploradores") exploradoresProgress()
-        if(profileSection == "Pioneiros") pioneirosProgress()
-        if(profileSection == "Caminheiros") caminheirosProgress()
+        if (profileSection == "Lobitos") clubScoutsProgress()
+        if (profileSection == "Exploradores") scoutsSectionProgress()
+        if (profileSection == "Pioneiros") ventureScoutsProgress()
+        if (profileSection == "Caminheiros") roversProgress()
     }
 
-    private fun lobitosProgress() {
+    //TODO
+    /**
+     * Method that is called if the profile is [R.string.section_cub_scouts] and changes the progress of the
+     * profile according to the tracks made
+     * */
+    private fun clubScoutsProgress() {
         val stageOne = profileProgressViewModel.getStageOneValue(args.profileID)
         val stageTwo = profileProgressViewModel.getStageTwoValue(args.profileID)
         val stageThree = profileProgressViewModel.getStageThreeValue(args.profileID)
-        if(stageOne)  profileViewModel.setProfileProgressName(args.profileID, "Lobo Valente")
-        else profileViewModel.setProfileProgressName(args.profileID, "Pata Tenra")
-        if(stageTwo)  profileViewModel.setProfileProgressName(args.profileID, "Lobo Cortês")
-        if(stageThree)  profileViewModel.setProfileProgressName(args.profileID, "Lobo Amigo")
+        if (stageOne)
+            profileViewModel.setProfileProgressName(
+                args.profileID,
+                getString(R.string.profile_progress_cs_stage_one)
+            )
+        else
+            profileViewModel.setProfileProgressName(
+                args.profileID,
+                getString(R.string.profile_progress_cs_no_stage)
+            )
+        if (stageTwo)
+            profileViewModel.setProfileProgressName(
+                args.profileID,
+                getString(R.string.profile_progress_cs_stage_two)
+            )
+        if (stageThree)
+            profileViewModel.setProfileProgressName(
+                args.profileID,
+                getString(R.string.profile_progress_cs_stage_three)
+            )
     }
 
-    private fun exploradoresProgress() {
+    /**
+     * Method that is called if the profile is [R.string.section_scouts] and changes the progress of the
+     * profile according to the tracks made
+     * */
+    private fun scoutsSectionProgress() {
         val stageOne = profileProgressViewModel.getStageOneValue(args.profileID)
         val stageTwo = profileProgressViewModel.getStageTwoValue(args.profileID)
         val stageThree = profileProgressViewModel.getStageThreeValue(args.profileID)
-        if(stageOne)  profileViewModel.setProfileProgressName(args.profileID, "Aliança")
-        else profileViewModel.setProfileProgressName(args.profileID, "Apelo")
-        if(stageTwo)  profileViewModel.setProfileProgressName(args.profileID, "Rumo")
-        if(stageThree)  profileViewModel.setProfileProgressName(args.profileID, "Descoberta")
+        if (stageOne)
+            profileViewModel.setProfileProgressName(
+                args.profileID,
+                getString(R.string.profile_progress_scouts_stage_one)
+            )
+        else
+            profileViewModel.setProfileProgressName(
+                args.profileID,
+                getString(R.string.profile_progress_scouts_no_stage)
+            )
+        if (stageTwo)
+            profileViewModel.setProfileProgressName(
+                args.profileID,
+                getString(R.string.profile_progress_scouts_stage_two)
+            )
+        if (stageThree)
+            profileViewModel.setProfileProgressName(
+                args.profileID,
+                getString(R.string.profile_progress_scouts_stage_three)
+            )
     }
 
-    private fun pioneirosProgress() {
+    /**
+     * Method that is called if the profile is [R.string.section_venture_scout] and changes the progress of the
+     * profile according to the tracks made
+     * */
+    private fun ventureScoutsProgress() {
         val stageOne = profileProgressViewModel.getStageOneValue(args.profileID)
         val stageTwo = profileProgressViewModel.getStageTwoValue(args.profileID)
         val stageThree = profileProgressViewModel.getStageThreeValue(args.profileID)
-        if(stageOne)  profileViewModel.setProfileProgressName(args.profileID, "Conhecimento")
-        else profileViewModel.setProfileProgressName(args.profileID, "Desprendimento")
-        if(stageTwo)  profileViewModel.setProfileProgressName(args.profileID, "Vontade")
-        if(stageThree)  profileViewModel.setProfileProgressName(args.profileID, "Construção")
+        if (stageOne)
+            profileViewModel.setProfileProgressName(
+                args.profileID,
+                getString(R.string.profile_progress_vs_stage_one)
+            )
+        else
+            profileViewModel.setProfileProgressName(
+                args.profileID,
+                getString(R.string.profile_progress_vs_no_stage)
+            )
+        if (stageTwo)
+            profileViewModel.setProfileProgressName(
+                args.profileID,
+                getString(R.string.profile_progress_vs_stage_two)
+            )
+        if (stageThree)
+            profileViewModel.setProfileProgressName(
+                args.profileID,
+                getString(R.string.profile_progress_vs_stage_three)
+            )
     }
 
-    private fun caminheirosProgress() {
+    /**
+     * Method that is called if the profile is [R.string.section_rovers] and changes the progress of the
+     * profile according to the tracks made
+     * */
+    private fun roversProgress() {
         val stageOne = profileProgressViewModel.getStageOneValue(args.profileID)
         val stageTwo = profileProgressViewModel.getStageTwoValue(args.profileID)
         val stageThree = profileProgressViewModel.getStageThreeValue(args.profileID)
-        if(stageOne)  profileViewModel.setProfileProgressName(args.profileID, "Comunidade")
-        else profileViewModel.setProfileProgressName(args.profileID, "Caminho")
-        if(stageTwo)  profileViewModel.setProfileProgressName(args.profileID, "Serviço")
-        if(stageThree)  profileViewModel.setProfileProgressName(args.profileID, "Partida")
+        if (stageOne)
+            profileViewModel.setProfileProgressName(
+                args.profileID,
+                getString(R.string.profile_progress_rovers_stage_one)
+            )
+        else
+            profileViewModel.setProfileProgressName(
+                args.profileID,
+                getString(R.string.profile_progress_rovers_no_stage)
+            )
+        if (stageTwo)
+            profileViewModel.setProfileProgressName(
+                args.profileID,
+                getString(R.string.profile_progress_rovers_stage_two)
+            )
+        if (stageThree)
+            profileViewModel.setProfileProgressName(
+                args.profileID,
+                getString(R.string.profile_progress_rovers_stage_three)
+            )
     }
 
+    /**
+     * Method that counts how many tracks the profile has made in the affective area
+     * */
     private fun countTrueAffective(): Int {
         var count = 0
         if (binding.progressCheckboxAfetivoRelacionamento.isChecked) count++
@@ -223,6 +318,9 @@ class ProfileProgressFragment : Fragment() {
         return count
     }
 
+    /**
+     * Method that counts how many tracks the profile has made in the character area
+     * */
     private fun countTrueCharacter(): Int {
         var count = 0
         if (binding.progressCheckboxCaracterAutonomia.isChecked) count++
@@ -231,6 +329,9 @@ class ProfileProgressFragment : Fragment() {
         return count
     }
 
+    /**
+     * Method that counts how many tracks the profile has made in the spiritual area
+     * */
     private fun countTrueSpiritual(): Int {
         var count = 0
         if (binding.progressCheckboxEspiritualDescoberta.isChecked) count++
@@ -239,6 +340,9 @@ class ProfileProgressFragment : Fragment() {
         return count
     }
 
+    /**
+     * Method that counts how many tracks the profile has made in the physical area
+     * */
     private fun countTruePhysical(): Int {
         var count = 0
         if (binding.progressCheckboxFisicoDesempenho.isChecked) count++
@@ -247,6 +351,9 @@ class ProfileProgressFragment : Fragment() {
         return count
     }
 
+    /**
+     * Method that counts how many tracks the profile has made in the intellectual area
+     * */
     private fun countTrueIntellectual(): Int {
         var count = 0
         if (binding.progressCheckboxIntelectualConhecimento.isChecked) count++
@@ -255,6 +362,9 @@ class ProfileProgressFragment : Fragment() {
         return count
     }
 
+    /**
+     * Method that counts how many tracks the profile has made in the social area
+     * */
     private fun countTrueSocial(): Int {
         var count = 0
         if (binding.progressCheckboxSocialCidadania.isChecked) count++
@@ -263,6 +373,9 @@ class ProfileProgressFragment : Fragment() {
         return count
     }
 
+    /**
+     * Method that creates an option in the app menu to go to the main menu
+     */
     private fun generateMenu() {
         val menuHost = requireActivity()
         menuHost.addMenuProvider(object : MenuProvider {

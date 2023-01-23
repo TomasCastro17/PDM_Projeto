@@ -10,9 +10,17 @@ import androidx.navigation.fragment.findNavController
 import com.otaliastudios.cameraview.CameraListener
 import com.otaliastudios.cameraview.PictureResult
 import pt.ipbeja.pdm_projeto.databinding.FragmentCameraBinding
+import pt.ipbeja.pdm_projeto.viewmodel.PhotoViewModel
 import java.io.File
 import java.util.*
 
+/*
+* This fragment shows the phone's camera view
+*
+* ------------------------------------
+* @authors: Tomás Jorge, Luiz Felhberg
+* @numbers: 20436, 20347
+*/
 class CameraFragment : Fragment() {
 
     private val viewModel: PhotoViewModel by activityViewModels()
@@ -27,11 +35,21 @@ class CameraFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     * This method is a make sure that view is fully created and its purpose is to save the
+     * photo file when the shutter button is clicked
+     *
+     * @param view – The View returned by onCreateView(LayoutInflater, ViewGroup, Bundle).
+     * @param savedInstanceState – If non-null, this fragment is being re-constructed from a
+     * previous saved state as given here.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // This method set a lifecycle for the view, so the user doesn't have to open or close or destroy it
         binding.camera.setLifecycleOwner(viewLifecycleOwner)
 
+        // The view has a listener to know when the photo is taken
         binding.camera.addCameraListener(object : CameraListener() {
             override fun onPictureTaken(result: PictureResult) {
 
@@ -48,15 +66,20 @@ class CameraFragment : Fragment() {
             }
         })
 
+        // Listener to the shutter button, to take the picture
         binding.shutterBtn.setOnClickListener {
             binding.camera.takePicture()
         }
 
+        // Listener to change the view without taking the picture
         binding.cancelBtn.setOnClickListener {
             findNavController().popBackStack()
-            binding.camera.close()
         }
     }
+
+    /**
+     * This method set the [_binding] null when the view is destroyed
+     */
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

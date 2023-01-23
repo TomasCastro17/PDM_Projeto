@@ -1,5 +1,88 @@
 <resources>
     <string name="app_name">PDM_Projeto</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Sections -->
+    <string name="section_cub_scouts">Cub Scouts</string>
+    <string name="section_scouts">Scouts</string>
+    <string name="section_venture_scout">Venture Scout</string>
+    <string name="section_rovers">Rovers</string>
+
+    <!-- Titles -->
+    <string name="title_photo">Photo</string>
+    <string name="title_name">Name</string>
+    <string name="section_title">Section</string>
+    <string name="title_progress">Progress</string>
+    <string name="input_name_hint">Write the name…</string>
+
+    <!-- Buttons -->
+    <string name="change_photo_button">Change Photo</string>
+    <string name="save_button">Save</string>
+    <string name="back_button">Back</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="create_button">Create</string>
+    <string name="register_scouts">Register scouts</string>
+    <string name="see_scouts">See Scouts</string>
+    <string name="scouts_with_merit">Scouts With Mérito</string>
+    <string name="profile_option_1">Edit Profile</string>
+    <string name="profile_option_2">Delete Profile</string>
+    <string name="delete_button">Delete</string>
+    <string name="profile_picture_description">Profile Picture</string>
+    <string name="camera_back_description">Back</string>
+    <string name="camera_shutter_button_description">Shutter button</string>
+
+    <!-- Profile progress titles -->
+    <string name="profile_progress_area_title">Areas</string>
+    <string name="profile_progress_tracks_title">Tracks</string>
+    <string name="profile_progress_done_title">Done</string>
+    <string name="profile_progress_area_affective">Affective</string>
+    <string name="profile_progress_area_character">Character</string>
+    <string name="profile_progress_area_spiritual">Spiritual</string>
+    <string name="profile_progress_area_physical">Physical</string>
+    <string name="profile_progress_area_intellectual">Intellectual</string>
+    <string name="profile_progress_area_social">Social</string>
+    <string name="profile_progress_affective_track_one">Relationship and Sensibility</string>
+    <string name="profile_progress_affective_track_two">Emotional balance</string>
+    <string name="profile_progress_affective_track_three">Self-esteem</string>
+    <string name="profile_progress_character_track_one">Autonomy</string>
+    <string name="profile_progress_character_track_two">Responsibility</string>
+    <string name="profile_progress_character_track_three">Coherence</string>
+    <string name="profile_progress_spiritual_track_one">Discovery</string>
+    <string name="profile_progress_spiritual_track_two">Deepening</string>
+    <string name="profile_progress_spiritual_track_three">Service</string>
+    <string name="profile_progress_physical_track_one">Performance</string>
+    <string name="profile_progress_physical_track_two">Self-knowledge</string>
+    <string name="profile_progress_physical_track_three">Physical Wellness</string>
+    <string name="profile_progress_intellectual_track_one">Knowledge Search</string>
+    <string name="profile_progress_intellectual_track_two">Problem Resolution</string>
+    <string name="profile_progress_intellectual_track_three">Creativity and Expression</string>
+    <string name="profile_progress_social_track_one">Actively exercise citizenship</string>
+    <string name="profile_progress_social_track_two">Solidarity and tolerance</string>
+    <string name="profile_progress_social_track_three">Interaction and cooperation</string>
+
+    <!-- Profile progress stage -->
+    <string name="profile_progress_cs_no_stage">Tender Paw</string>
+    <string name="profile_progress_cs_stage_one">Brave Wolf</string>
+    <string name="profile_progress_cs_stage_two">Courteous Wolf</string>
+    <string name="profile_progress_cs_stage_three">Friendly Wolf</string>
+
+    <string name="profile_progress_scouts_no_stage">Appeal</string>
+    <string name="profile_progress_scouts_stage_one">Alliance</string>
+    <string name="profile_progress_scouts_stage_two">Direction</string>
+    <string name="profile_progress_scouts_stage_three">Discovery</string>
+
+    <string name="profile_progress_vs_no_stage">Detachment</string>
+    <string name="profile_progress_vs_stage_one">Knowledge</string>
+    <string name="profile_progress_vs_stage_two">Will</string>
+    <string name="profile_progress_vs_stage_three">Construction</string>
+
+    <string name="profile_progress_rovers_no_stage">Path</string>
+    <string name="profile_progress_rovers_stage_one">Community</string>
+    <string name="profile_progress_rovers_stage_two">Service</string>
+    <string name="profile_progress_rovers_stage_three">Departure</string>
+
+    <!-- Alerts and snackbars -->
+    <string name="alert_dialog_options_title">Choose an option</string>
+    <string name="alert_dialog_delete_option">Delete profile: %1$s</string>
+    <string name="snackbar_profile_deleted">The profile %1$s has been deleted</string>
+    <string name="snackbar_progress_save">Progress save</string>
 </resources>

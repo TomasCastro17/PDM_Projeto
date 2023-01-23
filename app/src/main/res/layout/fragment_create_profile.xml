@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:text="Fotografia" />
+            android:text="@string/title_photo" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraint_photo"
@@ -30,7 +30,7 @@
                 android:id="@+id/profilePhoto"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/createProfile_profile_photo"
-                android:contentDescription="Foto de perfil"
+                android:contentDescription="@string/profile_picture_description"
                 android:src="@drawable/ic_baseline_person_2_24"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="24dp"
-                android:text="Alterar Foto"
+                android:text="@string/change_photo_button"
                 android:textAlignment="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/profilePhoto"
@@ -55,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:text="Nome" />
+            android:text="@string/title_name" />
 
         <EditText
             android:id="@+id/profileName"
@@ -63,15 +63,16 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:inputType="textCapSentences"
-            android:hint="Escreva o nome do escuteiro"
+            android:hint="@string/input_name_hint"
             android:minHeight="48dp"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:importantForAutofill="no" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:text="Secção" />
+            android:text="@string/section_title" />
 
         <Spinner
             android:id="@+id/profileSection"
@@ -87,7 +88,7 @@
         android:id="@+id/profileCancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cancelar"
+        android:text="@string/cancel_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_margin="@dimen/main_margin"
@@ -97,7 +98,7 @@
         android:id="@+id/profileCreate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Criar"
+        android:text="@string/create_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="@dimen/main_margin"

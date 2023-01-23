@@ -16,7 +16,7 @@
             android:id="@+id/profileProgressName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hello"
+            android:text="@string/title_name"
             android:textAlignment="center"
             android:textSize="@dimen/titles_size"
             android:layout_margin="@dimen/main_margin"
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textAlignment="center"
-                android:text="Áreas"
+                android:text="@string/profile_progress_area_title"
                 android:layout_marginLeft="@dimen/main_margin"
                 android:layout_marginRight="@dimen/main_margin"
                 android:textSize="@dimen/progress_area_text_size"/>
@@ -44,14 +44,14 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textAlignment="center"
-                android:text="Trilhos"
+                android:text="@string/profile_progress_tracks_title"
                 android:textSize="@dimen/progress_area_text_size"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textAlignment="center"
-                android:text="Feito"
+                android:text="@string/profile_progress_done_title"
                 android:layout_marginLeft="@dimen/main_margin"
                 android:layout_marginRight="@dimen/main_margin"
                 android:textSize="@dimen/progress_area_text_size"/>
@@ -71,7 +71,7 @@
                 android:layout_margin="@dimen/progress_margin"
                 android:background="#FF0026"
                 android:gravity="center"
-                android:text="Afetivo"
+                android:text="@string/profile_progress_area_affective"
                 android:textAlignment="center"
                 android:textSize="@dimen/progress_area_text_size"/>
 
@@ -86,7 +86,7 @@
                     android:layout_height="@dimen/progress_track_height"
                     android:background="#F45A5A"
                     android:gravity="center"
-                    android:text="Relacionamento\ne sensibilidade"
+                    android:text="@string/profile_progress_affective_track_one"
                     android:textAlignment="center"
                     android:textSize="@dimen/progress_text_size" />
 
@@ -97,7 +97,7 @@
                     android:layout_marginBottom="@dimen/progress_margin_between"
                     android:background="#F45A5A"
                     android:gravity="center"
-                    android:text="Equilibrio\nemocional"
+                    android:text="@string/profile_progress_affective_track_two"
                     android:textAlignment="center"
                     android:textSize="@dimen/progress_text_size"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -109,7 +109,7 @@
                     android:layout_height="@dimen/progress_track_height"
                     android:background="#F45A5A"
                     android:gravity="center"
-                    android:text="Auto-estima"
+                    android:text="@string/profile_progress_affective_track_three"
                     android:textAlignment="center"
                     android:textSize="@dimen/progress_text_size"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -160,7 +160,7 @@
                 android:layout_margin="@dimen/progress_margin"
                 android:background="#0E82FF"
                 android:gravity="center"
-                android:text="Carácter"
+                android:text="@string/profile_progress_area_character"
                 android:textAlignment="center"
                 android:textSize="@dimen/progress_area_text_size"
                 app:layout_constraintStart_toStartOf="parent"
@@ -177,7 +177,7 @@
                     android:layout_height="@dimen/progress_track_height"
                     android:background="#4FA4FF"
                     android:gravity="center"
-                    android:text="Autonomia"
+                    android:text="@string/profile_progress_character_track_one"
                     android:textAlignment="center"
                     android:textSize="@dimen/progress_text_size" />
 
@@ -188,7 +188,7 @@
                     android:layout_marginBottom="@dimen/progress_margin_between"
                     android:background="#4FA4FF"
                     android:gravity="center"
-                    android:text="Responsabilidade"
+                    android:text="@string/profile_progress_character_track_two"
                     android:textAlignment="center"
                     android:textSize="@dimen/progress_text_size"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -200,7 +200,7 @@
                     android:layout_height="@dimen/progress_track_height"
                     android:background="#4FA4FF"
                     android:gravity="center"
-                    android:text="Coerência"
+                    android:text="@string/profile_progress_character_track_three"
                     android:textAlignment="center"
                     android:textSize="@dimen/progress_text_size"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -253,7 +253,7 @@
                 android:layout_margin="@dimen/progress_margin"
                 android:background="#FF0EFB"
                 android:gravity="center"
-                android:text="Espiritual"
+                android:text="@string/profile_progress_area_spiritual"
                 android:textAlignment="center"
                 android:textSize="@dimen/progress_area_text_size"
                 app:layout_constraintStart_toStartOf="parent"
@@ -270,7 +270,7 @@
                     android:layout_height="@dimen/progress_track_height"
                     android:background="#FF86FD"
                     android:gravity="center"
-                    android:text="Descoberta"
+                    android:text="@string/profile_progress_spiritual_track_one"
                     android:textAlignment="center"
                     android:textSize="@dimen/progress_text_size" />
 
@@ -281,7 +281,7 @@
                     android:layout_marginBottom="@dimen/progress_margin_between"
                     android:background="#FF86FD"
                     android:gravity="center"
-                    android:text="Aprofundamento"
+                    android:text="@string/profile_progress_spiritual_track_two"
                     android:textAlignment="center"
                     android:textSize="@dimen/progress_text_size"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -293,7 +293,7 @@
                     android:layout_height="@dimen/progress_track_height"
                     android:background="#FF86FD"
                     android:gravity="center"
-                    android:text="Serviço"
+                    android:text="@string/profile_progress_spiritual_track_three"
                     android:textAlignment="center"
                     android:textSize="@dimen/progress_text_size"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -346,7 +346,7 @@
                 android:layout_margin="@dimen/progress_margin"
                 android:background="#01CA33"
                 android:gravity="center"
-                android:text="Fisico"
+                android:text="@string/profile_progress_area_physical"
                 android:textAlignment="center"
                 android:textSize="@dimen/progress_area_text_size"
                 app:layout_constraintStart_toStartOf="parent"
@@ -363,7 +363,7 @@
                     android:layout_height="@dimen/progress_track_height"
                     android:background="#52E877"
                     android:gravity="center"
-                    android:text="Desempenho"
+                    android:text="@string/profile_progress_physical_track_one"
                     android:textAlignment="center"
                     android:textSize="@dimen/progress_text_size" />
 
@@ -374,7 +374,7 @@
                     android:layout_marginBottom="@dimen/progress_margin_between"
                     android:background="#52E877"
                     android:gravity="center"
-                    android:text="Auto-conhecimento"
+                    android:text="@string/profile_progress_physical_track_two"
                     android:textAlignment="center"
                     android:textSize="@dimen/progress_text_size"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -386,7 +386,7 @@
                     android:layout_height="@dimen/progress_track_height"
                     android:background="#52E877"
                     android:gravity="center"
-                    android:text="Bem-estar físico"
+                    android:text="@string/profile_progress_physical_track_three"
                     android:textAlignment="center"
                     android:textSize="@dimen/progress_text_size"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -439,7 +439,7 @@
                 android:layout_margin="@dimen/progress_margin"
                 android:background="#FF760E"
                 android:gravity="center"
-                android:text="Intelectual"
+                android:text="@string/profile_progress_area_intellectual"
                 android:textAlignment="center"
                 android:textSize="@dimen/progress_area_text_size"
                 app:layout_constraintStart_toStartOf="parent"
@@ -456,7 +456,7 @@
                     android:layout_height="@dimen/progress_track_height"
                     android:background="#FFA058"
                     android:gravity="center"
-                    android:text="Procura do\nconhecimento"
+                    android:text="@string/profile_progress_intellectual_track_one"
                     android:textAlignment="center"
                     android:textSize="@dimen/progress_text_size" />
 
@@ -467,7 +467,7 @@
                     android:layout_marginBottom="@dimen/progress_margin_between"
                     android:background="#FFA058"
                     android:gravity="center"
-                    android:text="Resolução de\nproblemas"
+                    android:text="@string/profile_progress_intellectual_track_two"
                     android:textAlignment="center"
                     android:textSize="@dimen/progress_text_size"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -479,7 +479,7 @@
                     android:layout_height="@dimen/progress_track_height"
                     android:background="#FFA058"
                     android:gravity="center"
-                    android:text="Criatividade e\nExpressão"
+                    android:text="@string/profile_progress_intellectual_track_three"
                     android:textAlignment="center"
                     android:textSize="@dimen/progress_text_size"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -532,7 +532,7 @@
                 android:layout_margin="@dimen/progress_margin"
                 android:background="#8F0EFF"
                 android:gravity="center"
-                android:text="Social"
+                android:text="@string/profile_progress_area_social"
                 android:textAlignment="center"
                 android:textSize="@dimen/progress_area_text_size"
                 app:layout_constraintStart_toStartOf="parent"
@@ -549,7 +549,7 @@
                     android:layout_height="@dimen/progress_track_height"
                     android:background="#C785FF"
                     android:gravity="center"
-                    android:text="Exercer ativamente\ncidadania"
+                    android:text="@string/profile_progress_social_track_one"
                     android:textAlignment="center"
                     android:textSize="@dimen/progress_text_size" />
 
@@ -560,7 +560,7 @@
                     android:layout_marginBottom="@dimen/progress_margin_between"
                     android:background="#C785FF"
                     android:gravity="center"
-                    android:text="Solidariedade e\ntolerância"
+                    android:text="@string/profile_progress_social_track_two"
                     android:textAlignment="center"
                     android:textSize="@dimen/progress_text_size" />
 
@@ -569,7 +569,7 @@
                     android:layout_height="@dimen/progress_track_height"
                     android:background="#C785FF"
                     android:gravity="center"
-                    android:text="Interação e cooperação"
+                    android:text="@string/profile_progress_social_track_three"
                     android:textAlignment="center"
                     android:textSize="@dimen/progress_text_size" />
             </LinearLayout>
@@ -613,7 +613,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_margin="@dimen/main_margin"
-            android:text="Guardar"/>
+            android:text="@string/save_button"/>
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/btnCancel"
@@ -621,7 +621,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_margin="@dimen/main_margin"
-            android:text="Cancelar"/>
+            android:text="@string/cancel_button"/>
         </FrameLayout>
 
     </LinearLayout>

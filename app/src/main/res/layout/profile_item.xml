@@ -13,7 +13,7 @@
         android:id="@+id/profilePicture"
         android:layout_width="@dimen/profile_picture_width"
         android:layout_height="@dimen/profile_picture_width"
-        android:contentDescription="ProfilePic"
+        android:contentDescription="@string/profile_picture_description"
         android:importantForAccessibility="no"
         android:rotation="90"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -7,23 +7,35 @@
     android:layout_margin="32dp"
     tools:context=".ui.menus.MainMenuFragment">
 
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/optionLobitos"
-        android:layout_width="300dp"
-        android:layout_height="@dimen/menu_btn_height"
-        android:text="Lobitos"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/optionExploradores"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/section_title"
+        android:textSize="@dimen/titles_size"
+        app:layout_constraintBottom_toTopOf="@+id/optionLobitos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/optionLobitos"
+        android:layout_width="300dp"
+        android:layout_height="@dimen/menu_btn_height"
+        android:text="@string/section_cub_scouts"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/optionExploradores"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/optionExploradores"
         android:layout_width="300dp"
         android:layout_height="@dimen/menu_btn_height"
-        android:text="Exploradores"
+        android:text="@string/section_scouts"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/optionPioneiros"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,7 +47,7 @@
         android:id="@+id/optionPioneiros"
         android:layout_width="300dp"
         android:layout_height="@dimen/menu_btn_height"
-        android:text="Pioneiros"
+        android:text="@string/section_venture_scout"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/optionCaminheiros"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,23 +59,49 @@
         android:id="@+id/optionCaminheiros"
         android:layout_width="300dp"
         android:layout_height="@dimen/menu_btn_height"
-        android:text="Caminheiros"
+        android:text="@string/section_rovers"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/chooseSectionBack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/optionPioneiros"
-        android:layout_marginBottom="@dimen/main_margin"/>
+        app:layout_constraintTop_toBottomOf="@+id/optionPioneiros" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/chooseSectionBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Voltar"
+        android:text="@string/back_button"
         android:textAlignment="center"
-        android:layout_margin="@dimen/main_margin"
+        android:layout_marginStart="@dimen/main_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/optionCaminheiros" />
+        app:layout_constraintTop_toBottomOf="@+id/optionCaminheiros"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/optionCaminheiros"
+            android:layout_width="300dp"
+            android:layout_height="@dimen/menu_btn_height"
+            android:text="@string/choose_section_caminheiros"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/optionPioneiros"
+            android:layout_marginBottom="@dimen/main_margin"/>
+
+
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+    android:id="@+id/chooseSectionBack"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/back_button"
+    android:textAlignment="center"
+    android:layout_margin="@dimen/main_margin"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/optionCaminheiros" />-->

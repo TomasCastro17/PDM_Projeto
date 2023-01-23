@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PDM_Projeto</string>
+
+    <!-- Sections -->
+    <string name="section_cub_scouts">Lobitos</string>
+    <string name="section_scouts">Exploradores</string>
+    <string name="section_venture_scout">Pioneiros</string>
+    <string name="section_rovers">Caminheiros</string>
+
+    <!-- Titles -->
+    <string name="title_photo">Fotografia</string>
+    <string name="title_name">Nome</string>
+    <string name="section_title">Secção</string>
+    <string name="title_progress">Progresso</string>
+    <string name="input_name_hint">Escreva o nome…</string>
+
+    <!-- Buttons -->
+    <string name="change_photo_button">Alterar Foto</string>
+    <string name="save_button">Guardar</string>
+    <string name="back_button">Voltar</string>
+    <string name="cancel_button">Cancelar</string>
+    <string name="create_button">Criar</string>
+    <string name="register_scouts">Registar Escuteiro</string>
+    <string name="see_scouts">Ver Escuteiros</string>
+    <string name="scouts_with_merit">Escuteiros Com Mérito</string>
+    <string name="profile_option_1">Editar Perfil</string>
+    <string name="profile_option_2">Eliminar Perfil</string>
+    <string name="delete_button">Eliminar</string>
+    <string name="profile_picture_description">Foto de perfil</string>
+    <string name="camera_back_description">Voltar</string>
+    <string name="camera_shutter_button_description">Botão de disparo</string>
+
+    <!-- Profile progress titles -->
+    <string name="profile_progress_area_title">Áreas</string>
+    <string name="profile_progress_tracks_title">Trilhos</string>
+    <string name="profile_progress_done_title">Feito</string>
+    <string name="profile_progress_area_affective">Afetivo</string>
+    <string name="profile_progress_area_character">Carácter</string>
+    <string name="profile_progress_area_spiritual">Espiritual</string>
+    <string name="profile_progress_area_physical">Físico</string>
+    <string name="profile_progress_area_intellectual">Intelectual</string>
+    <string name="profile_progress_area_social">Social</string>
+    <string name="profile_progress_affective_track_one">Relacionamento e sensibilidade</string>
+    <string name="profile_progress_affective_track_two">Equilíbrio emocional</string>
+    <string name="profile_progress_affective_track_three">Auto-estima</string>
+    <string name="profile_progress_character_track_one">Autonomia</string>
+    <string name="profile_progress_character_track_two">Responsabilidade</string>
+    <string name="profile_progress_character_track_three">Coerência</string>
+    <string name="profile_progress_spiritual_track_one">Descoberta</string>
+    <string name="profile_progress_spiritual_track_two">Aprofundamento</string>
+    <string name="profile_progress_spiritual_track_three">Serviço</string>
+    <string name="profile_progress_physical_track_one">Desempenho</string>
+    <string name="profile_progress_physical_track_two">Auto-conhecimento</string>
+    <string name="profile_progress_physical_track_three">Bem-estar físico</string>
+    <string name="profile_progress_intellectual_track_one">Procura do conhecimento</string>
+    <string name="profile_progress_intellectual_track_two">Resolução de problemas</string>
+    <string name="profile_progress_intellectual_track_three">Criatividade e Expressão</string>
+    <string name="profile_progress_social_track_one">Exercer ativamente cidadania</string>
+    <string name="profile_progress_social_track_two">Solidariedade e tolerância</string>
+    <string name="profile_progress_social_track_three">Interação e cooperação</string>
+
+    <!-- Profile progress stage -->
+    <string name="profile_progress_cs_no_stage">Pata Tenra</string>
+    <string name="profile_progress_cs_stage_one">Lobo Valente</string>
+    <string name="profile_progress_cs_stage_two">Lobo Cortês</string>
+    <string name="profile_progress_cs_stage_three">Lobo Amigo</string>
+
+    <string name="profile_progress_scouts_no_stage">Apelo</string>
+    <string name="profile_progress_scouts_stage_one">Aliança</string>
+    <string name="profile_progress_scouts_stage_two">Rumo</string>
+    <string name="profile_progress_scouts_stage_three">Descoberta</string>
+
+    <string name="profile_progress_vs_no_stage">Desprendimento</string>
+    <string name="profile_progress_vs_stage_one">Conhecimento</string>
+    <string name="profile_progress_vs_stage_two">Vontade</string>
+    <string name="profile_progress_vs_stage_three">Construção</string>
+
+    <string name="profile_progress_rovers_no_stage">Caminho</string>
+    <string name="profile_progress_rovers_stage_one">Comunidade</string>
+    <string name="profile_progress_rovers_stage_two">Serviço</string>
+    <string name="profile_progress_rovers_stage_three">Partida</string>
+
+    <!-- Alerts and snackbars -->
+    <string name="alert_dialog_options_title">Escolha um opção</string>
+    <string name="alert_dialog_delete_option">Deseja eliminar o perfil: %1$s</string>
+    <string name="snackbar_profile_deleted">O perfil %1$s foi elimando</string>
+    <string name="snackbar_progress_save">Progresso guardado</string>
+</resources>
