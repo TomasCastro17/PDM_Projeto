@@ -98,9 +98,11 @@ class ProfileViewModel(app: Application) : AndroidViewModel(app) {
     /**
      * This method sends the new profile information to update his information in the database
      *
+     * @param profile data of the profile to be updated
+     *
      * @return list of [Profile] depending on section
      * */
-    fun updateProfile(profile: Profile) {
+    fun updateProfile(profile: Profile)  = viewModelScope.launch {
         profileDao.update(profile)
     }
 
