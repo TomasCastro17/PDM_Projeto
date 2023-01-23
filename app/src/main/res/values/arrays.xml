@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="seccao">
-        <item>Lobitos</item>
-        <item>Exploradores</item>
-        <item>Pioneiros</item>
-        <item>Caminheiros</item>
+    <string-array name="sections">
+        <item>@string/section_cub_scouts</item>
+        <item>@string/section_scouts</item>
+        <item>@string/section_venture_scout</item>
+        <item>@string/section_rovers</item>
     </string-array>
 
 </resources>

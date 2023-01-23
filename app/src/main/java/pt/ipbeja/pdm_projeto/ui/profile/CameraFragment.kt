@@ -16,6 +16,11 @@ import java.util.*
 
 /*
 * This fragment shows the phone's camera view
+* In this Fragment the user has to take a picture and the picture will be saved in the
+* phone's file
+*
+* This code was based on the CameraViewDemo app:
+* https://ipbejapt.sharepoint.com/:u:/r/sites/PDM-2022-2023/Documentos%20Partilhados/Recursos/CameraViewDemo.zip?csf=1&web=1&e=evEiwg
 *
 * ------------------------------------
 * @authors: Tomás Jorge, Luiz Felhberg
@@ -56,6 +61,7 @@ class CameraFragment : Fragment() {
                 val filesDir = requireContext().filesDir
                 val file = File(filesDir, UUID.randomUUID().toString() + ".jpg")
 
+                // Requisite 3 e 4 - save the photo as file
                 result.toFile(file) {
                     it?.run {
                         viewModel.file = it

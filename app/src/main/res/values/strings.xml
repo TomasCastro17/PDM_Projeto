@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PDM_Projeto</string>
+    <string name="app_name">Scout Progress</string>
 
     <!-- Sections -->
     <string name="section_cub_scouts">Cub Scouts</string>
@@ -83,6 +83,10 @@
     <!-- Alerts and snackbars -->
     <string name="alert_dialog_options_title">Choose an option</string>
     <string name="alert_dialog_delete_option">Delete profile: %1$s</string>
+    <string name="snackbar_profile_created">Profile %1$s created!!</string>
+    <string name="snackbar_profile_updated">Profile %1$s updated</string>
     <string name="snackbar_profile_deleted">The profile %1$s has been deleted</string>
     <string name="snackbar_progress_save">Progress save</string>
+    <string name="snackbar_photo_needed">You need to take a photo</string>
+
 </resources>

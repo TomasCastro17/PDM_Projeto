@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/profile_item_height"
@@ -16,9 +15,6 @@
         android:contentDescription="@string/profile_picture_description"
         android:importantForAccessibility="no"
         android:rotation="90"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -27,18 +23,14 @@
         android:layout_height="match_parent"
         android:layout_marginStart="16dp"
         android:gravity="center|start"
-        app:layout_constraintStart_toEndOf="@+id/profilePicture"
-        app:layout_constraintTop_toTopOf="@+id/profilePicture"
         tools:text="@tools:sample/full_names" />
 
     <TextView
         android:id="@+id/profileProgressName"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/profileName"
-        app:layout_constraintTop_toTopOf="@+id/profileName"
+        android:layout_marginStart="@dimen/main_margin"
+        android:gravity="center|start"
         tools:text="@tools:sample/full_names" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

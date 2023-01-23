@@ -3,9 +3,7 @@ package pt.ipbeja.pdm_projeto.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.lifecycle.viewmodel.viewModelFactory
 import kotlinx.coroutines.launch
-import pt.ipbeja.pdm_projeto.db.ProfileProgress
 import pt.ipbeja.pdm_projeto.db.Progress
 import pt.ipbeja.pdm_projeto.db.ScoutsDB
 

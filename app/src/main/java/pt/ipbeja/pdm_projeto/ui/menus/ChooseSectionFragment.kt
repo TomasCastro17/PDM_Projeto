@@ -1,22 +1,15 @@
 package pt.ipbeja.pdm_projeto.ui.menus
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.MenuProvider
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import kotlinx.coroutines.launch
 import pt.ipbeja.pdm_projeto.R
 import pt.ipbeja.pdm_projeto.databinding.FragmentChooseSectionBinding
 import pt.ipbeja.pdm_projeto.ui.profile.CreateProfileFragmentDirections
-import pt.ipbeja.pdm_projeto.ui.profile.ProfileListFragmentArgs
-import pt.ipbeja.pdm_projeto.viewmodel.ProfileViewModel
 
 /*
 * Since there are four different sections in the Scouts, the user has to choose

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">PDM_Projeto</string>
+    <string name="app_name">Progresso Escutista</string>
 
     <!-- Sections -->
     <string name="section_cub_scouts">Lobitos</string>
@@ -84,6 +84,9 @@
     <!-- Alerts and snackbars -->
     <string name="alert_dialog_options_title">Escolha um opção</string>
     <string name="alert_dialog_delete_option">Deseja eliminar o perfil: %1$s</string>
+    <string name="snackbar_profile_created">Perfil do %1$s criado!!</string>
+    <string name="snackbar_profile_updated">Perfil do %1$s alterado!!</string>
     <string name="snackbar_profile_deleted">O perfil %1$s foi elimando</string>
     <string name="snackbar_progress_save">Progresso guardado</string>
+    <string name="snackbar_photo_needed">Precisas de tirar uma fotografia</string>
 </resources>

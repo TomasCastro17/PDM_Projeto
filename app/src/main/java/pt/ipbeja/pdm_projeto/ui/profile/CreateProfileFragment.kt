@@ -26,7 +26,10 @@ import pt.ipbeja.pdm_projeto.viewmodel.ProgressViewModel
 import java.io.File
 
 /*
-* This fragment is a form for the user to create the Scouts profile
+* This Fragment is a form for the user to create the Scouts profile
+* In this Fragment, the user needs to take a picture to create the profile
+* and then when the picture is taken and when the profile data is shown
+* the profile picture is also shown (lines 73 to 77)
 *
 * ------------------------------------
 * @authors: Tomás Jorge, Luiz Felhberg
@@ -65,6 +68,7 @@ class CreateProfileFragment : Fragment() {
         // Save the picture file path
         val profilePicturePath = setPicture()
 
+        // Requisite 3 and 5 - calling the fragment to take the picture and is running as a coroutine
         // When the button "profileChangePhoto" is clicked, the view is changed, so the user can take a picture to identity the profile
         binding.profileChangePhoto.setOnClickListener {
             lifecycleScope.launch {
@@ -97,7 +101,7 @@ class CreateProfileFragment : Fragment() {
             // confirm that the data inputs are completed, it's completed, the view is changed
             if (profilePicturePath == "") {
                 Snackbar.make(
-                    requireView(), "Precisas de tirar uma fotografia!", Snackbar.LENGTH_LONG
+                    requireView(), getString(R.string.snackbar_photo_needed), Snackbar.LENGTH_LONG
                 ).show()
 
             } else if (binding.profileName.text.toString() != "") {
@@ -118,7 +122,7 @@ class CreateProfileFragment : Fragment() {
      * This method gets the information of the selected profile, to fill into the
      * existing inputs
      *
-     * @param profilePicturePath - contains the path of photo taken for the profile
+     * @param profilePicturePath - contains the path of new photo taken for the profile
      * */
     private fun editProfile(profilePicturePath: String) {
         // gets the info of the selected profile
@@ -127,23 +131,32 @@ class CreateProfileFragment : Fragment() {
         binding.profileName.text = profile.name.toEditable()
         // put the section of the profile as the selected
         when (profile.section) {
-            "Lobitos" -> binding.profileSection.setSelection(0)
-            "Exploradores" -> binding.profileSection.setSelection(1)
-            "Pioneiros" -> binding.profileSection.setSelection(2)
-            "Caminheiros" -> binding.profileSection.setSelection(3)
+            getString(R.string.section_cub_scouts) -> binding.profileSection.setSelection(0)
+            getString(R.string.section_scouts) -> binding.profileSection.setSelection(1)
+            getString(R.string.section_venture_scout) -> binding.profileSection.setSelection(2)
+            getString(R.string.section_rovers) -> binding.profileSection.setSelection(3)
         }
         // Transform the picture path into a bitmap
-        val imgBitmap = BitmapFactory.decodeFile(File(profile.picturePath).absolutePath)
-        binding.profilePhoto.setImageBitmap(imgBitmap)
-        binding.profilePhoto.rotation = 90.0F
-        binding.profilePhoto.layoutParams.width = 410
+        var filepath = profile.picturePath
+        if (profilePicturePath == "") {
+            val imgBitmap = BitmapFactory.decodeFile(File(filepath).absolutePath)
+            binding.profilePhoto.setImageBitmap(imgBitmap)
+            binding.profilePhoto.rotation = 90.0F
+            binding.profilePhoto.layoutParams.width = 410
+        } else filepath = profilePicturePath
 
         // Listener to change the profile with the new changed data
         binding.profileCreate.setOnClickListener {
             if (binding.profileName.text.toString() != "") {
                 val profileName = binding.profileName.text.toString()
                 val profileSection = binding.profileSection.selectedItem.toString()
-                updateProfile(profileName, profileSection, profilePicturePath, profile.progressName)
+                updateProfile(
+                    profileName,
+                    profileSection,
+                    filepath,
+                    profile.progressName,
+                    profile.id
+                )
                 findNavController().navigate(
                     CreateProfileFragmentDirections.actionCreateProfileFragmentToProfileListFragment(
                         binding.profileSection.selectedItemPosition + 1, false
@@ -157,11 +170,13 @@ class CreateProfileFragment : Fragment() {
     /**
      * This method verify if the [photoViewModel] File existing and if was taken on this
      * view creation
+     * In this method, the taken picture is also shown
      *
      * @return null if the photo wasn't taken yet and if the photo was taken a String to
      * the photo path
      * */
     private fun setPicture(): String {
+        // Requisite 3 and 4 - view the photo as a file
         photoViewModel.file?.let {
             if (photoViewModel.photoTaken) {
                 val filepath = it.toUri().toString().split(":")[1]
@@ -189,10 +204,14 @@ class CreateProfileFragment : Fragment() {
         // fills in the progressName of the profile, since this depends on which section the profile belongs to
         var progressName = ""
         when (profileSection) {
-            "Lobitos" -> progressName = "Pata Tenra"
-            "Exploradores" -> progressName = "Apelo"
-            "Pioneiros" -> progressName = "Desprendimento"
-            "Caminheiros" -> progressName = "Caminho"
+            getString(R.string.section_cub_scouts) -> progressName =
+                getString(R.string.profile_progress_cs_no_stage)
+            getString(R.string.section_scouts) -> progressName =
+                getString(R.string.profile_progress_scouts_no_stage)
+            getString(R.string.section_venture_scout) -> progressName =
+                getString(R.string.profile_progress_vs_no_stage)
+            getString(R.string.section_rovers) -> progressName =
+                getString(R.string.profile_progress_rovers_no_stage)
         }
 
         // creates a new profile in database
@@ -213,7 +232,11 @@ class CreateProfileFragment : Fragment() {
             ProfileProgress(profileId = profileId, progressId = progressId)
         )
 
-        Snackbar.make(requireView(), "Perfil do $profileName criado!!", Snackbar.LENGTH_SHORT)
+        Snackbar.make(
+            requireView(),
+            getString(R.string.snackbar_profile_created, profileName),
+            Snackbar.LENGTH_SHORT
+        )
             .show()
     }
 
@@ -228,14 +251,19 @@ class CreateProfileFragment : Fragment() {
         profileName: String,
         profileSection: String,
         profilePicturePath: String,
-        progressName: String
+        progressName: String,
+        profileID: Long
     ) {
         profileViewModel.updateProfile(
             Profile(
-                profileName, profileSection, profilePicturePath, progressName
+                profileName, profileSection, profilePicturePath, progressName, profileID
             )
         )
-        Snackbar.make(requireView(), "Perfil do $profileName alterado!!", Snackbar.LENGTH_SHORT)
+        Snackbar.make(
+            requireView(),
+            getString(R.string.snackbar_profile_updated, profileName),
+            Snackbar.LENGTH_SHORT
+        )
             .show()
     }
 

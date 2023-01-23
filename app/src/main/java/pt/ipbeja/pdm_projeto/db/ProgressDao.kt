@@ -3,6 +3,14 @@ package pt.ipbeja.pdm_projeto.db
 import androidx.room.Dao
 import androidx.room.Query
 
+/*
+* Queries in the database for the table Progress
+* Requisite 4
+*
+* ------------------------------------
+* @authors: Tomás Jorge, Luiz Felhberg
+* @numbers: 20436, 20347
+*/
 @Dao
 interface ProgressDao : BaseDao<Progress> {
 

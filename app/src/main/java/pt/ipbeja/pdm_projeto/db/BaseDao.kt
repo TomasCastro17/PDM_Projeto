@@ -4,6 +4,14 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Update
 
+/*
+* General queries in the database
+* Requisite 4
+*
+* ------------------------------------
+* @authors: Tomás Jorge, Luiz Felhberg
+* @numbers: 20436, 20347
+*/
 interface BaseDao<T> {
 
     /**

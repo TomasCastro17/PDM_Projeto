@@ -5,7 +5,14 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-
+/*
+* Class that initializes and creates the database
+* Requisite 4
+*
+* ------------------------------------
+* @authors: Tomás Jorge, Luiz Felhberg
+* @numbers: 20436, 20347
+*/
 @Database(
     entities = [Profile::class, Progress::class, ProfileProgress::class],
     version = 8,

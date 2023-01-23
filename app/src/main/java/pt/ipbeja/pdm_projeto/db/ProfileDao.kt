@@ -2,9 +2,15 @@ package pt.ipbeja.pdm_projeto.db
 
 import androidx.room.Dao
 import androidx.room.Query
-import kotlinx.coroutines.flow.Flow
 
-
+/*
+* Queries in the database for the table Profile
+* Requisite 4
+*
+* ------------------------------------
+* @authors: Tomás Jorge, Luiz Felhberg
+* @numbers: 20436, 20347
+*/
 @Dao
 interface ProfileDao : BaseDao<Profile> {
 

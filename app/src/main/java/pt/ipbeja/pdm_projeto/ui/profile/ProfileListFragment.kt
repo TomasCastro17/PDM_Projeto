@@ -20,7 +20,9 @@ import pt.ipbeja.pdm_projeto.viewmodel.ProfileViewModel
 import java.io.File
 
 /*
-* This fragment shows the profile list, depending on the selected section
+* This Fragment shows the profile list, depending on the selected section
+* In this Fragment we are using a RecyclerView and at lines 78 to 84 we are filling this view
+* with the all the profiles
 *
 * ------------------------------------
 * @authors: Tomás Jorge, Luiz Felhberg
@@ -56,27 +58,23 @@ class ProfileListFragment : Fragment() {
         // depending on the selected section, the view will have a color, the color identifies the color of the section
         when (args.section) {
             1 -> {
-//                binding.section.text = "Lobitos"
                 binding.section.text = getString(R.string.section_cub_scouts)
                 view.setBackgroundResource(R.color.yellow)
             }
             2 -> {
-//                binding.section.text = "Exploradores"
                 binding.section.text = getString(R.string.section_scouts)
                 view.setBackgroundResource(R.color.green)
             }
             3 -> {
-//                binding.section.text = "Pioneiros"
                 binding.section.text = getString(R.string.section_venture_scout)
                 view.setBackgroundResource(R.color.blue)
             }
             4 -> {
-//                binding.section.text = "Caminheiros"
                 binding.section.text = getString(R.string.section_rovers)
                 view.setBackgroundResource(R.color.red)
             }
         }
-
+        // requisite 2 - fill the RecyclerView
         // The profiles are shown, depending on which section was selected and which option the user chose in the main menu
         if (args.progressDone) { // progressDone, means that the user selected the option to see the profiles that has merit
             adapter.setData(viewModel.getProfileListFromSectionAndProgressDone(binding.section.text.toString()))

@@ -3,13 +3,12 @@ package pt.ipbeja.pdm_projeto.ui.menus
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import kotlinx.coroutines.launch
 import pt.ipbeja.pdm_projeto.databinding.FragmentMainMenuBinding
 
 /*
-* This fragment was created to work as a main menu to access the many tasks that a the user can do
+* This fragment was created to work as a main menu to access the many tasks that a the user can do,
+* navigating through the fragments
 *
 * ------------------------------------
 * @authors: Tomás Jorge, Luiz Felhberg
@@ -39,34 +38,31 @@ class MainMenuFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Requisite 2 - navigation from this fragment to the CreateProfileFragment
         binding.optionCreateProfile.setOnClickListener {
-            lifecycleScope.launch {
-                findNavController().navigate(
-                    MainMenuFragmentDirections.actionMainMenuFragmentToCreateProfileFragment(
-                        -1
-                    )
+            findNavController().navigate(
+                MainMenuFragmentDirections.actionMainMenuFragmentToCreateProfileFragment(
+                    -1
                 )
-            }
+            )
         }
 
+        // Requisite 2 - navigation from this fragment to the ChooseSectionFragment
         binding.optionViewProfiles.setOnClickListener {
-            lifecycleScope.launch {
-                findNavController().navigate(
-                    MainMenuFragmentDirections.actionMainMenuFragmentToChooseSectionFragment(
-                        false
-                    )
+            findNavController().navigate(
+                MainMenuFragmentDirections.actionMainMenuFragmentToChooseSectionFragment(
+                    false
                 )
-            }
+            )
         }
 
+        // Requisite 2 - navigation from this fragment to the ChooseSectionFragment
         binding.optionViewProgressDone.setOnClickListener {
-            lifecycleScope.launch {
-                findNavController().navigate(
-                    MainMenuFragmentDirections.actionMainMenuFragmentToChooseSectionFragment(
-                        true
-                    )
+            findNavController().navigate(
+                MainMenuFragmentDirections.actionMainMenuFragmentToChooseSectionFragment(
+                    true
                 )
-            }
+            )
         }
 
     }
