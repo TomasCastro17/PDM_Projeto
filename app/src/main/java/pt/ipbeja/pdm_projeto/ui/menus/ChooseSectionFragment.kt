@@ -9,7 +9,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import pt.ipbeja.pdm_projeto.R
 import pt.ipbeja.pdm_projeto.databinding.FragmentChooseSectionBinding
-import pt.ipbeja.pdm_projeto.ui.profile.CreateProfileFragmentDirections
 
 /*
 * Since there are four different sections in the Scouts, the user has to choose
@@ -103,7 +102,7 @@ class ChooseSectionFragment : Fragment() {
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
                 return when (menuItem.itemId) {
                     R.id.home -> {
-                        findNavController().navigate(CreateProfileFragmentDirections.actionCreateProfileFragmentToMainMenuFragment())
+                        findNavController().navigate(ChooseSectionFragmentDirections.actionChooseSectionFragmentToMainMenuFragment())
                         true
                     }
                     else -> false

@@ -180,10 +180,10 @@ class ProfileProgressFragment : Fragment() {
      * */
     private fun setProfileProgress() {
         val profileSection = profileViewModel.getProfileSection(args.profileID)
-        if (profileSection == "Lobitos") clubScoutsProgress()
-        if (profileSection == "Exploradores") scoutsSectionProgress()
-        if (profileSection == "Pioneiros") ventureScoutsProgress()
-        if (profileSection == "Caminheiros") roversProgress()
+        if (profileSection == getString(R.string.section_cub_scouts)) clubScoutsProgress()
+        if (profileSection == getString(R.string.section_scouts)) scoutsSectionProgress()
+        if (profileSection == getString(R.string.section_venture_scout)) ventureScoutsProgress()
+        if (profileSection == getString(R.string.section_rovers)) roversProgress()
     }
 
     //TODO
@@ -386,7 +386,7 @@ class ProfileProgressFragment : Fragment() {
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
                 return when (menuItem.itemId) {
                     R.id.home -> {
-                        findNavController().navigate(CreateProfileFragmentDirections.actionCreateProfileFragmentToMainMenuFragment())
+                        findNavController().navigate(ProfileProgressFragmentDirections.actionProfileProgressFragmentToMainMenuFragment())
                         true
                     }
                     else -> false
